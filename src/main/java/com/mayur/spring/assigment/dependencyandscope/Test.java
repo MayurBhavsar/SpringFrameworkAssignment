@@ -11,7 +11,9 @@ public class Test {
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/mayur/spring/assigment/dependencyandscope/config.xml");
 		
 		University university = (University)context.getBean("university");
-		System.out.println(university);
+		System.out.println(university.hashCode());
+		University university2 = (University)context.getBean("university");
+		System.out.println(university2.hashCode());
 		((AbstractApplicationContext) context).close();
 	}
 
